@@ -54,4 +54,30 @@ PHASE 3: Create a .gitignore file and add "node_modules" to it
     STEP 6.1: Create a .gitignore file so that you dont add the addtional weight to the git repo
 
 
-PHASE 4: 
+PHASE 4: In your app.js file, create a basic express server.
+=============================================================
+
+                'use strict';
+                                                                                        /* First, load modules you want to use in your application:*/
+                const express = require('express');                                         /* load the express module and store as express */          
+                const path = require('path');                                               /* load the path module (note: since this is a root module, you dont need to list in dependencies) */
+                const bodyParser = require('body-parser');                                  /* load body-parser module is middleware that parses incoming request bodies in a middleware before handlers (available under req.body property)*/
+                const nodemailer = require('nodemailer');                                   /* load nodemailer to allow easy email sending */
+                                                                                        /* Second, initialize the express app */
+                const app = express();                                                      /* initialize app by calling express and storing as "app" */
+                                                                                        /* Third, set up your middleware */
+                app.use(bodyParser.json())                                                  /* bodyparser middleware that can parse json*/
+                app.use(bodyParser.urlencoded({extended: false}));                          /* bodyparser middleware that can parse url */
+
+                app.listen(3000, function() {                                           /* listen on port 3000 */
+                    console.log('listening on port 3000...');                               /* log that the server is listenting on port 3000. */
+                });
+
+    o   When you go to localhost:3000, you will see "Cannot GET /", which is because we have not
+        created a route yet for any of our future pages.
+
+    o   To test out a basic route, add a simple GET route that calls a function with a request and response object:
+
+                app.get('/', function(req, res) {
+                    res.send('Hello there friend!')
+                });

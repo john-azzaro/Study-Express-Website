@@ -4,31 +4,54 @@ Process Notes
 
 PHASE 1: Setting up the project
 ===============================
-STEP 1: Create a project folder.
-STEP 2: Install express using "npm install -g express"
-STEP 3: Create a .js file for your entry point (i.e. index.js, app.js, etc)
-STEP 4: Initialize npm using "npm init"
+    STEP 1: Create a project folder.
+    STEP 2: Install express using "npm install -g express"
+    STEP 3: Create a .js file for your entry point (i.e. index.js, app.js, etc)
+    STEP 4: Initialize npm using "npm init"
 
 
 PHASE 2: Install dependencies
 ==============================
-STEP 5.1: Add dependencies by adding another property to your package.json file at the bottom:
+    o   To install dependencies there are two ways: 
+            1. specify the dependencies in your package.json files and then when you are done, run "npm install" in gitbash
+            2. Install each and every dependency 
+    
+    
+    STEP 5.1A: Add dependencies by adding another property to your package.json file at the bottom:
 
-        "dependencies": {
-           "body-parser": "*",                           <== helps parse different types of data.  Note that the value is the version, but if you dont know the version use "*"
-           "express": "*",                               <== latest version of express
-           "pug": "*",                                   <== this is a templating engine (formerly jade)
-           "nodemailer": "*",                            <==
-        }
-       
-STEP 5.2: In gitbash, write "npm install" to install all the dependencies above.
-        o   Note on this installation method:  It seems a little more intuitive to install dependencies like it is done above because you dont have to do "npm install x" 
-            for each and every dependency you want to initially add (although it might be best to use npm install x later on into the project purely because its less work
-            at that later point).  Plus, you can easily put in the dependency version like you have above.
+            "dependencies": {
+            "body-parser": "*",                           <== helps parse different types of data.  Note that the value is the version, but if you dont know the version use "*"
+            "express": "*",                               <== latest version of express
+            "pug": "*",                                   <== this is a templating engine (formerly jade)
+            "nodemailer": "*",                            <== use this for form submissions
+            }
+        
+    STEP 5.2A: In gitbash, write "npm install" to install all the dependencies above.
+            o   Installation note:  It seems a little more intuitive to install dependencies like it is done above because you dont have to do "npm install x" 
+                for each and every dependency you want to initially add (although it might be best to use npm install x later on into the project purely because 
+                its less work at that later point).  Plus, you can easily put in the dependency version like in the method above.
 
-STEP 5.3: Look in your new node_modules folders to see if all your dependcies have been added.
+        -------------------------------------------------------------------------------------------------------------------------------------
+        (or)
+
+        STEP 5B: Do an "npm install x" in gitbash where "x" is the package you want to install for each and every one of your dependencies:
+
+                npm install body-parser
+                npm install express
+                npm install pug
+                npm install nodemailer
+
+                (or) 
+
+                npm install body-parser express pug nodemailer
+        -------------------------------------------------------------------------------------------------------------------------------------
+
+    STEP 5.3: Look in your new node_modules folders to see if all your dependcies have been added.
 
 
 PHASE 3: Create a .gitignore file and add "node_modules" to it
 ===============================================================
-STEP 6.1: Create a .gitignore file so that you dont add the addtional weight to the git repo
+    STEP 6.1: Create a .gitignore file so that you dont add the addtional weight to the git repo
+
+
+PHASE 4: 

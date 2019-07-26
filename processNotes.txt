@@ -109,11 +109,22 @@ IF you want to use static html:
 
         app.use(express.static(path.join(__dirname + '/public')));   
 
-    STEP 9: Create a folder called "public" where all your ststic files will be available.
+    STEP 9: Create a folder called "public" where all your static files will be available.
 
-    STEP 10: Inside your public folder, create your html files.
+    STEP 10: Inside your public folder, place your html, css, and js files!
 
+    ---------------------------------------------------------------------------------------------------------------
 
+    o   NOTE: Since the server is now set to serve content from inside the /public folder, you DO NOT have write individual routes. 
+        
+            Because we used express.static, which tells the express app to use express.static middleware to serve assets
+            located inside the /public folder, when any request is made to the root of the app (i.e. / ), express looks by default
+            for a file named index.html in the public folder.  And since public contains an index.html, that file is sent to the 
+            browser which then retrieves the css, js etc.  
+
+    ---------------------------------------------------------------------------------------------------------------
+
+        
 IF you want to use the pug templating engine:
 =============================================
 

@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');                                  /* l
 const nodemailer = require('nodemailer');                                   /* load nodemailer to allow easy email sending */
                                                                         /* Second, initialize the express app */
 const app = express();                                                      /* initialize app by calling express and storing as "app" */
-    
+
                                                                         /* Fourth, setup your view engine to view static templates.  This will set your app views folder to something like "/users/project/myApp/views" */
 // app.set('views', path.join(__dirname, 'views'));                           /* This tells pug where the template files will be. and we pass 'views' as the first param and second param use path.join (normalize al args into a path string) is the location (directory name is "views") */       
 // app.set('view engine', 'pug')                                           /* IF you would like to use the pug templating engine, set this and in app.get, use 'index'*/
@@ -19,23 +19,10 @@ app.use(bodyParser.urlencoded({extended: false}));                          /* b
 
 
 
-app.get('/', function(req, res) {                                       /* GET request that sends back a response for the main page */
-    res.render('index');
-});
-
-app.get('/discover', function(req, res) {                                       
-    res.render('discover');
-});
-
-app.get('/services', function(req, res) {                                      
-    res.render('services');
-});
-
-app.get('/contact', function(req, res) {                                       
-    res.render('contact');
-});
-
-
+// app.get('/', function(req, res) {                                       /* GET request that sends back a response for the main page */
+//     res.render('index');                                                   /* NOTE: Use specific routes like this if you are using pug via views folder. However, */
+// });                                                                        /* because we are using express.static middleware to server assets from /public, we dont need*/
+                                                                              /* to use individual routes like this because the app knows to look INSIDE /public folder./ */
 
 app.listen(3000, function() {                                           /* listen on port 3000 */
     console.log('listening on port 3000...');                               /* log that the server is listenting on port 3000. */

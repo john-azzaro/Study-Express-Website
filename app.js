@@ -17,9 +17,25 @@ app.use(express.static(path.join(__dirname + '/public')));                      
 app.use(bodyParser.json())                                                  /* bodyparser middleware that can parse json*/
 app.use(bodyParser.urlencoded({extended: false}));                          /* bodyparser middleware that can parse url */
 
-app.get('/', function(req, res) {                                       /* GET request that sends back a response: */
-    res.render('index.html');
+
+
+app.get('/', function(req, res) {                                       /* GET request that sends back a response for the main page */
+    res.render('index');
 });
+
+app.get('/discover', function(req, res) {                                       
+    res.render('discover');
+});
+
+app.get('/services', function(req, res) {                                      
+    res.render('services');
+});
+
+app.get('/contact', function(req, res) {                                       
+    res.render('contact');
+});
+
+
 
 app.listen(3000, function() {                                           /* listen on port 3000 */
     console.log('listening on port 3000...');                               /* log that the server is listenting on port 3000. */

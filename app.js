@@ -7,11 +7,11 @@ const nodemailer = require('nodemailer');                                   /* l
                                                                         /* Second, initialize the express app */
 const app = express();                                                      /* initialize app by calling express and storing as "app" */
     
-                                                                        /* Fourth, setup your view engine */
+                                                                        /* Fourth, setup your view engine.  This will set your app views folder to something like "/users/project/myApp/views" */
 app.set('views', path.join(__dirname, 'views'));                           /* This tells pug where the template files will be. and we pass 'views' as the first param and second param use path.join (normalize al args into a path string) is the location (directory name is "views") */       
 app.set('view engine', 'pug')                                              /* this tells express to use the pug templating engine*/
 
-                                                                        /* Third, set up your middleware */
+                                                                        /* Third, set up your middleware with app.use.  app.use applies the specified middleware to the main app stack in the order they are listed A->B->C */
 app.use(bodyParser.json())                                                  /* bodyparser middleware that can parse json*/
 app.use(bodyParser.urlencoded({extended: false}));                          /* bodyparser middleware that can parse url */
 

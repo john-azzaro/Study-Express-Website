@@ -1,0 +1,221 @@
+/* Main style sheet */
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');    /* imports the poppins font to use in your project (compared to standard insertion in meta as link) */
+
+/*// GLOBAL SETTINGS //*/
+*, *::before, *::after {                                                       /* for all elements inside the application (including pseudo elements)... */
+    box-sizing: border-box;                                                       /* ... standardize widths and heights. */
+     margin: 0;                                                                   /* ... set margin to 0 ... */
+     padding: 0;                                                                  /* ... set padding to 0 ... */
+  }
+
+body {                                                                         /* For everything in the body of the HTML document: */
+    padding: 0;                                                                   /* ... padding 0... */
+    margin: 0;                                                                    /* ... margin 0... */
+    background: linear-gradient(to right, rgb(147, 147, 155), rgb(155, 158, 139));                                                  
+    font-family: 'Poppins', sans-serif;                                           /* ... font family is poppins and a defaulty of san serif if there is an issue downloading... */
+    font-size: 1.2rem;                                                            /* ... default font size is font relative to the root html element... */
+    color: white;                                                               /* ... default text color is white... */
+    min-height: 100vh;                                                            /* ... sets the body to be 100% of the view of the screen (i.e. 100 view heights). */
+}
+
+.container {                                                                 /* the "container" is the body of the html document.  Below we want to */
+    max-width: 1200px;                                                            /* ... a max-width that the container cannot exceed... */
+    margin: 0 auto;                                                               /* ... margin of 0 (on top and bottom) AND auto (on left and right) which centers everything if wider than 1200px. */
+    padding: 0 40px;                                                              /* ... padding of 0 (top and bottom) AND 40px (left and right) to provide space between body and edge of screen*/
+    flex-grow: 1;                                                                 /* ... ... */
+}
+
+.full-height-grow {                                                          /* For the sizing of the content on our page, */
+    display: flex;                                                                 /* ... define as a flex container (elements will be put next to each other)... */
+    flex-direction: column;                                                        /* ... sections will now be stack one on top of each other (i.e. nav, etc.*/
+}
+
+
+/*// NAVIGATION //*/
+.main-header {                                                               /* For the entire header element and all descendant elements: */                                          
+    display: flex;                                                                /* ... line up everything side-by-side... */
+    justify-content: space-between;                                               /* ... use "space-between" to push these two elements as far apart as possible (see "around" and "evenly" also). */
+    align-items: center;                                                          /* ... and both the brand logo and navigation sections are perfectly centered. */
+    height: 12vh;                                                                 /* ... and adding height will put space between the top of the document and the header element of 12%.  */
+}
+
+.brand-logo {                                                                /* section of header that holds the logo and brand name elements. */
+    display: flex;                                                                /* ... setting display to flex will put the elements (logo and brand name) next to each other...*/
+    align-items: center;                                                          /* ... text will line up in the center of the logo... */
+    font-size: 1.25em;                                                            /* ... font size of brand name will be larger... */
+    color: inherit;                                                               /* ... color will inherit from the parent (i.e. body) the color white.. */
+    text-decoration: none;                                                        /* ... remove underline from brand name (since it is a link to the home page). */
+}
+
+.logo-resize {                                                                /* Logo size follows the following constraints:*/
+    max-width: 50px;                                                              /* ... max-width of the orginal image is limited to 50px wide ... */     
+    max-height: 50px;                                                             /* ... max-length of the original image is limited to 50px tall */
+}
+
+.brand-logo-name {                                                            /* div element containing the brand name */              
+    margin-left: 1rem;                                                            /* ... puts the given amount of space between the logo and the brand name text. */
+}
+
+.main-nav ul {                                                                /* for the main nav container with the anchor tags "Discover" and "Join": */
+    display: flex;                                                                /* ... put the elements next to each other... */
+    margin: 0;                                                                    /* ... no margin ... */
+    padding: 0;                                                                   /* ... no padding ... */
+    list-style: none;                                                             /* ... remove the list styling (i.e. bullet points) */
+}
+
+.main-nav a  {                                                                 /* Styling the anchor tags themselves (i.e. "Discover" and "Join" */
+    color: inherit;                                                               /* ... the anchor tags inherits the color white from the parent body... */
+    text-decoration: none;                                                        /* ... remove the underline from the default anchor text styling... */
+    padding: 1.5rem;                                                              /* ... add space between the anchor tags... */
+    letter-spacing: 2px;                                                          /* ... add spacing between letters... */
+}
+
+.main-nav a:hover {                                                           /* When hovering over the anchor tags:*/
+    color: #f0f0f0;                                                             /* ... the anchor tag text will darken slightly... */
+}
+
+
+/*// BURGER NAVIGATION //*/
+
+.toggle-button {                                                              /* For the toggle button: */
+    display: none;                                                                /* ... display of none so it does not show on larger screen... */
+    position: absolute;                                                           /* ... position absolute so we can position to the extreme right of the screen... */                                                                   
+    top: 1rem;
+    right: 1.5rem;                                                                  /* ... position so itsnot quite at the right of the screen ... */
+    flex-direction: column;                                                       /* ... so all the spans line up on top of each other... */
+    justify-content: space-between;                                               /* ... space between each link will be as far apart as possible ... */
+    width: 30px;
+    height: 21px;
+   
+}
+
+.toggle-button .bar {                                                           /* For the styling of each bar: */
+    height: 3px;
+    width: 100%;
+    background-color: rgb(245, 245, 245);
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {                                                  /* if the screen is 768px or less: */
+
+    .toggle-button {                                                         /* For the toggle button when the screen is 768 or less: */
+        display: flex;                                                          /* ... the display is flex rather than none so it appears in smaller screen sizes... */      
+    }
+
+    .main-nav {                                                              /* For links: */
+        display: none;                                                         /* ... remove the links so you only see the burger menu... */
+        width: 100%;                                                              /*... container spans 100% (also see main-nav ul to ensure that both are 100% width) ... */
+    }
+
+    .main-header {                                                           /* To style the active burger menu: */
+        flex-direction: column;                                                  /* ... stack all elements on top of each other ...*/
+        align-items: flex-start;
+        padding-top: 10px;
+       
+    }
+
+    .main-nav ul {                                                            /* For the nav links in the burger menu: */
+        flex-direction: column;                                                  /*... stack one on top of each other ...*/
+        width: 100%;                                                             /*... with the width of the ul being 100%... */
+    }
+
+    .main-nav li {                                                           /* For the list items in the unordered list: */
+        text-align: center;                                                    /*... have all the links be aligned dead center ... */
+    }
+
+    .main-nav li a {                                                         /* For each link of the list item in the nav: */                       
+        padding: .5rem 1rem;
+    }
+
+    .main-nav.active {                                                        /* For when the burger nav is active: */
+        display: flex;                                                         /*... display flex ... */
+    }
+}
+
+
+
+/*// GLOBAL ELEMENT STYLING//*/
+
+.title {                                                                       /* For all "title" class elements: */
+    font-weight: 500;                                                              /* ... the text is medium thickness (see imported poppins google font at top)*/                  
+    font-size: 3em;                                                                /* ... font size of 3em (remember: em is x3 the size of the default 12pt font) ... */
+    margin-bottom: 1rem;                                                           /* ... spacing on the bottom of the title for consistent padding and margins */
+    margin-top: 0;
+}
+
+.subtitle {                                                                    /* For all "subtitle class elements: "*/
+    font-weight: 500;                                                              /* ... font weight of 500 which is medium bold ... */
+    font-size: 1.2em;                                                              /* ... font size of 1.2em which is a bit smaller than the title ... */
+    margin-bottom: 2rem;                                                           /* ... spacing at the bottom of the subtitle ... */
+}
+
+.btn {                                                                         /* For all buttons with the class "btn": */
+    color: white;                                                                /* ... text color is white... */   
+    background-color: rgb(216, 156, 86);                                                   /* ... button back ground color is blue ... */
+    padding: .75rem 1.5rem;                                                        /* ... padding on the button is .75.rem (top and bottom) and 1.5rem (left and right) ... */
+    border-radius: .5rem;                                                          /* ... with rounded edges ...*/
+    text-decoration: none;                                                         /* ... and no default link underline ... */
+    font-size: .9rem;                                                              /* ... and a slightly smaller font size compared to the subtitle text. */
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color:  rgb(206, 150, 86);
+  }
+  
+.btn:focus {
+    background-color: rgb(206, 150, 86);
+}
+
+.accent-text {                                                                 /* for highlighted text in the h1 element: */
+    color: rgb(230, 183, 130); 
+                                                      
+}
+
+/*/ GLOBAL CIRCULAR DESIGN SHAPES /*/
+.home-page-circle-1 {                                                          /* For circles on home page: */
+    position: absolute;                                                            /* ... absolute positioning so that it is outside normal flow and can be offset... */ 
+    width: 28vw;                                                                   /* ... width to make shape... */ 
+    height: 28vw;                                                                  /* ... height to make shape (now we have a box)... */ 
+    border-radius: 50%;                                                            /* ... 50% border radius will make the box a circle... */ 
+    background-color: rgba(117, 111, 97, 0.22);                                   /* ... background color with a .1 (i.e. 10%) opacity... */ 
+    bottom: 5vw;                                                                   /* ... bottom > 5vw means its within 5% of the bottom of the screen... */ 
+    left: 5vw;                                                                     /* ... left > 5vw means it is within 5% of the left of the screen... */ 
+    z-index: -1;                                                                   /* ... when you set z-index to -1, you set it BEHIND everything else... */ 
+}
+
+.home-page-circle-2 {                                                         /* Same as circle-1, only different location, size, and color */
+    position: absolute;
+    width: 20vw;
+    height: 20vw;
+    border-radius: 50%;
+    background-color: rgba(109, 103, 50, 0.08);
+    top: 8vw;
+    left: 30vw;
+    z-index: -1;
+}
+
+/*/ DESIGN SHAPES WITH PSEUDO SELECTOR /*/
+.home-page-circle-3 {                                                                 /* For the circle ruleset, we are essentially deferring  */
+    position: absolute;                                                                     /* ... outside normal flow so it can be offset ... */
+    overflow: hidden;                                                                       /* ... hides the rest of the shape outside the viewing area ... */
+    width: 55vw;                                                                            /* ... circle dimensions ... */
+    height: 55vw;                                                                           /* ... circle dimensions ... */                                                   
+    bottom: 0px;                                                                            /*... Note that bottom and right are 0 so as to be as far down as possible...*/
+    right: 0;                                                                               /*... Note also that setting a negative value will place the circle even lower. */
+    z-index: -1;
+}
+.home-page-circle-3::before {                                                          /* This pseudo selector is where we set the content for the circle. */
+    content: '';                                                                            /*... setting content to empty so that something shows up...*/
+    transform: translate(40%, 40%);                                                         /*... translate handles the offset from the page 40% to the right and 40% down  ...*/
+    position: absolute;                                                                     /*... position is absolute inside the parent...*/
+    height: 100%;                                                                           /*... height is 100% of the parent...*/
+    width: 100%;                                                                            /*... width is 100% of the parent...*/
+    border-radius: 50%;                                                                     /*... make the orginal square into a circle...*/
+    background-color: rgba(117, 97, 97, 0.1);                                             /*... color with transparency at 10%...*/
+}
+
+

@@ -1,0 +1,50 @@
+.contact-main-section {                                              /* For entire contact page: */
+    display: flex;                                                    /*... line everything up side by side ... */
+    justify-content: space-between;                                   /* ... space everything out as far apart as they can (left from right)...  */
+    align-items: center;                                              /* ... centers the text with the form horizontally...*/
+    flex-grow: 1;                                                     /* ... centers the text and form vertically ... */
+} 
+
+.contact-text {                                                       /* For h1 text on the left: */
+    font-weight: 500;                                                              /* ... the text is medium thickness (see imported poppins google font at top)*/                  
+    font-size: 3em;                                                                /* ... font size of 3em (remember: em is x3 the size of the default 12pt font) ... */
+    margin-bottom: 1rem;                                                           /* ... spacing on the bottom of the title for consistent padding and margins */
+    margin-top: 0;                                                       /* ... remove margins from header ... */
+}
+
+.contact-form {                                                       /* For the form styling: */
+    background-color: rgba(61, 61, 31, 0.23);
+    width: 50vw;                                                      /*... form will take up 50% of the view width... */
+    max-width: 50%;                                                   /*... and form will have a max-width of 50% of thge view width ...*/    
+    padding: 2rem 4rem;                                               /*... padding around the form content and the box...*/
+    border-radius: 10px;
+}
+
+.input-group {
+    display: flex;                                                     /*... line everything up side by side... */
+    flex-direction: column;                                            /*... stack everything one on top of each other... */
+    margin-bottom: 2rem;                                               /*... add a decent bottom margin buffer ... */                                                               
+}
+
+.input-group:last-child {
+    margin-bottom: 0;                                                  /*... removes last child element (i.e. contact now button) margin buffer for more appealing spacing... */
+}
+
+.input-group label {
+    font-weight: bold;                                                 /* ... bold the form labels ...*/
+    margin-bottom: .5rem;                                              /* .. adds spacing between lale and input field... */
+}
+
+.input-group input {
+    outline: none;                                                     /*... removesdefault outline ... */
+    background: none;                                                  /*... removesdefault default white background color ... */
+    border: 1px solid rgb(185, 184, 184);                               /*... adds a custom thin border... */             
+    font-size: 1em;                                                    /*... increases font size... */     
+    padding: .5em;                                                     /*... increases padding in the input field... */
+    border-radius: 5px;                                                                 
+    color: inherit;
+}
+
+.input-group input:focus {
+    border-color: rgb(214, 214, 214);
+}

@@ -1,0 +1,37 @@
+/* This is a generic style sheet for additional pages in the study */
+
+.page-main-section {                                                             /* For the section that holds the image and title/subtitle/button divs: */
+    display: flex;                                                                       /* ... define as a flex container (display elements next to each other) ... */
+    align-items: center;                                                                 /* ... where items will stretch to be the full HEIGHT of the container ... */
+    justify-content: space-between;                                                      /* ... and put as much space between the image and the title/subtitle/button divs as possible ... */
+    flex-grow: 1;                                                                        /* ... and fill out the remaing height in the page. */
+    
+}
+
+.page-main-section .page-image {                                            /*For the image: */
+    width: 30vw;                                                                        /* ... the image will be 30% of the screen width ... */
+    margin-left: 2rem;                                                                  /* ... for spacing between image and call to action on left... */
+    height: auto;                                                                       /* ... image scales so its not too big ... */
+    max-width: 300px;                                                                   /* ... maximum size ... */       
+}   
+
+.page-image {                                                                   /* For the doctor image: */
+    min-width: 300px;                                                                   /*... image will not shrink under 300px... */
+}
+
+.page-subtitle {
+    max-width: 40vw;
+}
+
+@media (max-width: 800px) {
+    .page-main-section {
+      flex-direction: column;
+      justify-content: center;
+    }
+  
+    .page-main-section .covers-image {
+      margin-top: 2rem;
+      height: 30vh;
+      width: auto;
+    }
+}

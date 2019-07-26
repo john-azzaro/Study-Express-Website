@@ -107,7 +107,7 @@ IF you want to use static html:
 
     STEP 8: Load the static middleware that tell the app where your files will be: 
 
-        app.use(express.static(__dirname + '/public'));  
+        app.use(express.static(path.join(__dirname + '/public')));   
 
     STEP 9: Create a folder called "public" where all your ststic files will be available.
 

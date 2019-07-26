@@ -1,0 +1,48 @@
+/* Style sheet for home page */
+
+.home-main-section {                                                                   /* For the section that holds the image and title/subtitle/button divs: */
+    display: flex;                                                                       /* ... define as a flex container (display elements next to each other) ... */
+    align-items: stretch;                                                                /* ... where items will stretch to be the full HEIGHT of the container ... */
+    justify-content: space-between;                                                      /* ... and put as much space between the image and the title/subtitle/button divs as possible ... */
+    flex-grow: 1;                                                                        /* ... and fill out the remaing height in the page. */
+}
+
+/*/ Image Left/*/
+.home-main-section .img-wrapper {                                                       /* Targeting the decendant (img-wrapper) of the parent (.home-main-section): */
+    display: flex;                                                                       /* ... display elements next to each other ... */
+    flex-grow: 1;                                                                        /* ... setting this will make sure the content takes up as much space as possible left to right ... */
+    flex-direction: column;                                                              /* ... set the section to have a VERITCAL flex direction ... */
+    align-items: stretch;                                                                /* ... items will stretch to fill container*/
+    justify-content: flex-end;                                                           /* ... push the image as close to the title/subtitle/button div as possible ... */
+}
+
+.home-main-section .device-image {                                                       /* For the image itself: */
+    background-image: url(img/device-white.png);                                         /* ... set the background image as the png... */
+    flex-grow: 1;                                                                        /* ... set the image to grow to the full height of the section it is inside of... */
+    max-height: 100vh;                                                                   /* ... maximum height allows the image to go as far as 100% of the view height  ...*/
+    min-width: 24vw;                                                                     /* ... set the maximum width to no larger than 30% of the view width (e.g. vw) of our screen (so doesnt get too small)...*/
+    background-size: contain;                                                            /* ... entire background image will fit inside the section without cropping...*/
+    background-repeat: no-repeat;                                                        /* ... the image will only show once ...*/
+    background-position: center;                                                         /* ... centers the image in the middle of the section-home ... */
+}
+
+/*/ Call to Action Right /*/
+.home-main-section .call-to-action {                                                     /* For call to action (on right) */
+    display: flex;                                                                        /* ... display elements next to each other ... */
+    flex-direction: column;                                                               /* ... display elements stacked on top of each other ... */
+    align-items: flex-start;                                                              /* ... so that items do not expand to fill entire width ... */
+    margin: 2rem;                                                                         /* ... for spacing between image and text ...*/
+    align-self: center;                                                                   /* ... centers the content in the center of the screen. */
+}
+
+@media (max-width: 900px) {
+    .home-main-section .img-wrapper {
+      display: none;
+    }
+  
+    .home-main-section {
+      justify-content: center;
+    }
+  }
+
+

@@ -98,7 +98,24 @@ Basic Website
 Basic Website with Routes and Views
 ====================================
     So now that you have a working server that can listen on a port (3000) and send a response to a given request, you
-    now want to implement your website.
+    now want to implement your website.  You can do this a few different ways:
+            1. use the "pug" templating engine.
+            2. Use static middleware for html files.
+
+IF you want to use static html:
+================================
+
+    STEP 8: Load the static middleware that tell the app where your files will be: 
+
+        app.use(express.static(__dirname + '/public'));  
+
+    STEP 9: Create a folder called "public" where all your ststic files will be available.
+
+    STEP 10: Inside your public folder, create your html files.
+
+
+IF you want to use the pug templating engine:
+=============================================
 
     STEP 8: Setup your "view engine".  A view engine enables you to use static template files in your application
 
@@ -108,6 +125,15 @@ Basic Website with Routes and Views
     STEP 9: in your project folder, create a "views" folder.
         o   This "views" folder will hold all your static files.
 
+    STEP 10: Inside your "views" folder, create a file called "index.pug".
+        o   To test whether or not your "index.pug" file is working correctly, type in "h1 This is a test".
+        o   What you should see is "This is a test" h1 element.  Press ctrl-u to see the source code.
+        o   Also keep in mind the pug syntax, indentation, etc.
+        o   In particular, pay attention to tab spacing formatting because you will get errors.
+
+    STEP 11: 
+        o   Interesting thing about pug is that you can shorten your development time by having a seperate file for something like a navigation bar (which
+            would be on every page of your website anyway) and then 
 
     Additional resources:
     https://jilles.me/getting-the-express-app-js/ -- good overview of express apps.

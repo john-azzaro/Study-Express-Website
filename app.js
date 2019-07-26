@@ -11,8 +11,7 @@ const app = express();                                                      /* i
 // app.set('views', path.join(__dirname, 'views'));                           /* This tells pug where the template files will be. and we pass 'views' as the first param and second param use path.join (normalize al args into a path string) is the location (directory name is "views") */       
 // app.set('view engine', 'pug')                                           /* IF you would like to use the pug templating engine, set this and in app.get, use 'index'*/
 
-app.use(express.static(path.join(__dirname + '/public')));                            /* IF you would like to use static HTML files, you only need to set this and in app.get, use index.html*/
-
+app.use(express.static(path.join(__dirname + '/public')));              /* IF you would like to use static HTML files, you only need to set this and in app.get, use index.html*/
                                                                         /* Third, set up your middleware with app.use.  app.use applies the specified middleware to the main app stack in the order they are listed A->B->C */
 app.use(bodyParser.json())                                                  /* bodyparser middleware that can parse json*/
 app.use(bodyParser.urlencoded({extended: false}));                          /* bodyparser middleware that can parse url */

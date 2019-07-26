@@ -6,12 +6,17 @@ const bodyParser = require('body-parser');                                  /* l
 const nodemailer = require('nodemailer');                                   /* load nodemailer to allow easy email sending */
                                                                         /* Second, initialize the express app */
 const app = express();                                                      /* initialize app by calling express and storing as "app" */
+    
+                                                                        /* Fourth, setup your view engine */
+app.set('views', path.join(__dirname, 'views'));                           /* This tells pug where the template files will be. and we pass 'views' as the first param and second param use path.join (normalize al args into a path string) is the location (directory name is "views") */       
+app.set('view engine', 'pug')                                              /* this tells express to use the pug templating engine*/
+
                                                                         /* Third, set up your middleware */
 app.use(bodyParser.json())                                                  /* bodyparser middleware that can parse json*/
 app.use(bodyParser.urlencoded({extended: false}));                          /* bodyparser middleware that can parse url */
 
-app.get('/', function(req, res) {                                       /* GET request that sends back a response of "Hello there friend!" when the client makes a request to the root address */
-    res.send('Hello there friend!');
+app.get('/', function(req, res) {                                       /* GET request that sends back a response: */
+    res.render('index');
 });
 
 app.listen(3000, function() {                                           /* listen on port 3000 */
@@ -20,4 +25,3 @@ app.listen(3000, function() {                                           /* liste
 
 
 
-// https://github.com/expressjs/body-parser#bodyparserurlencodedoptions -- body parser documentation

@@ -24,10 +24,7 @@ app.use(bodyParser.urlencoded({extended: false}));                          /* b
 // });                                                                        /* because we are using express.static middleware to server assets from /public, we dont need*/
                                                                               /* to use individual routes like this because the app knows to look INSIDE /public folder./ */
 
-app.listen(3000, function() {                                           /* listen on port 3000 */
-    console.log('listening on port 3000...');                               /* log that the server is listenting on port 3000. */
-});
-
-
-
-
+app.listen(process.env.PORT || 3000, function() {
+    console.log(`Your app is listening on port ${process.env.PORT || 3000}...`);     /* app.listen commands the server to listen for client requests on port 3000 and log when it begins listening*/
+});                                                                                      /* log that the server is listenting on port 3000. */
+    

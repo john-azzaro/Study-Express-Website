@@ -133,7 +133,13 @@ IF you want to use the pug templating engine:
 
     STEP 11: 
         o   Interesting thing about pug is that you can shorten your development time by having a seperate file for something like a navigation bar (which
-            would be on every page of your website anyway) and then 
+            would be on every page of your website anyway) and then simply "extends" it to the document you want to use it on.
+        o   A basic example would be to:
+            1. Create a "layouts.pug" file.
+            2. Create some content in that file.
+            3. In your index.pug file (for example), you would then write at the top of the document "extends layout"
+                o   What happens here is that the module is loaded to that page!
+            4. Then, add "block content" for the design on your page.
 
     Additional resources:
     https://jilles.me/getting-the-express-app-js/ -- good overview of express apps.

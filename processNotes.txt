@@ -62,7 +62,8 @@ Basic Website
             an object (module.exports) from another file or folder.  So for example, when you write "const bodyParser = require(body-parser)",
             what you are doing 
 
-
+        STEP 7: Setup your basic website and server
+    
                     'use strict';
                                                                                             /* First, load modules you want to use in your application:*/
                     const express = require('express');                                         /* load (i.e. import) the express framework */          
@@ -99,11 +100,13 @@ Basic Website with Routes and Views
     So now that you have a working server that can listen on a port (3000) and send a response to a given request, you
     now want to implement your website.
 
-    First thing you need to do is setup your "view engine".  A view engine enables you to use static template files in your application
+    STEP 8: Setup your "view engine".  A view engine enables you to use static template files in your application
 
+        app.set('views', path.join(__dirname, 'views'));               /* This tells pug where the template files will be. and we pass 'views' as the first param and second param use path.join (normalize al args into a path string) is the location (directory name is "views") */       
+        app.set('view engine', 'pug')                                  /* this tells express to use the pug view "templating" engine*/
 
-
-
+    STEP 9: in your project folder, create a "views" folder.
+        o   This "views" folder will hold all your static files.
 
 
     Additional resources:

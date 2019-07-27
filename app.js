@@ -34,7 +34,7 @@ app.post('/submit-form', function(req, res) {                                /* 
             pass: '',                                                         /* password to the email*/
         }
     });
-    let mailOptions = {                                                    /* mail options */
+    let mailOptions = {                                                      /* mail options */
         from: 'Joe Customerson <myName@gmail.com>',
         to: 'support@yahoo.com',
         subject: 'Website contact form submission',
@@ -42,7 +42,7 @@ app.post('/submit-form', function(req, res) {                                /* 
         html: '<p>You have a submission with the following details...</p><ul><li>Name: '+req.body.name+'</li><li>Email: '+req.body.email+'</li><li>Message: '+req.body.message+'</li></ul>'
     };
     
-    transporter.sendMail(mailOptions, function(error, info) {
+    transporter.sendMail(mailOptions, function(error, info) {                 /* Send mail... if error, redirect to homepage, if successful, send! */
         if(error) {
             console.log(error);
             res.redirect('/');
@@ -52,11 +52,7 @@ app.post('/submit-form', function(req, res) {                                /* 
         }
     });
 });                                                                       
-           
-
-
-
-
+  
 app.listen(process.env.PORT || 3000, function() {
     console.log(`Your app is listening on port ${process.env.PORT || 3000}...`);     /* app.listen commands the server to listen for client requests on port 3000 and log when it begins listening*/
 });                                                                                      /* log that the server is listenting on port 3000. */

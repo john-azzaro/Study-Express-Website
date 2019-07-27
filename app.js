@@ -26,7 +26,27 @@ app.use(bodyParser.urlencoded({extended: false}));                            /*
 
                                                                             /* For the email form:*/
 app.post('/submit-form', function(req, res) {                                /* use app.post because we are sending information*/
-    console.log('testing contact form');                                                      
+    console.log('contact form submitted...');                                /* shows that the form was submitted for testing (you can omit this if you want)*/
+    let transporter = nodemailer.createTransport({
+        service: 'Gmail',
+        auth: {
+            user: 'myName@gmail.com',                                         /* email */
+            pass: '',                                                         /* password to the email*/
+        }
+    });
+    let mailOptions = {                                                    /* mail options */
+        from: 'Joe Customerson <myName@gmail.com>',
+        to: 'support@yahoo.com',
+        subject: 'Website contact form submission',
+        text: 'You have a submission with the following details...  Name: '+req.body.name+'Email: '+req.body.email+ 'Message: '+req.body.message,
+        html: '<p>You have a submission with the following details...</p><ul><li>Name: '+req.body.name+'</li><li>Email: '+req.body.email+'</li><li>Message: '+req.body.message+'</li></ul>'
+    };
+    
+    transporter.sendMail(mailOptions, function(error, info) {
+        if(error) {
+            console.log()
+        }
+    });
 });                                                                       
            
 

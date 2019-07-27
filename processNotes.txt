@@ -187,7 +187,8 @@ PHASE 7: Add contact form
                 console.log('contact form submitted...');                                                      
             });  
 
-    STEP 4: 
+    STEP 4: Now at this point, we already have included node-mailer in our modules to have an easy way to submit contact forms.
+            
 
 
 SPECIAL NOTES

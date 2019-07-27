@@ -48,3 +48,19 @@
 .input-group input:focus {
     border-color: rgb(214, 214, 214);
 }
+
+.input-group textarea {
+    outline: none;                                                     /*... removesdefault outline ... */
+    background: none;                                                  /*... removesdefault default white background color ... */
+    border: 1px solid rgb(185, 184, 184);                               /*... adds a custom thin border... */             
+    font-size: 1em;                                                    /*... increases font size... */     
+    padding: .5em;                                                     /*... increases padding in the input field... */
+    border-radius: 5px;                                                                 
+    color: inherit;
+}
+
+.input-group textarea:focus {
+    border-color: rgb(214, 214, 214);
+}
+
+

@@ -95,8 +95,8 @@ Basic Website
 
 
 
-Basic Website with Routes and Views
-====================================
+PHASE 5: Basic Website with Routes and Views
+============================================
     So now that you have a working server that can listen on a port (3000) and send a response to a given request, you
     now want to implement your website.  You can do this a few different ways:
             1. use the "pug" templating engine.
@@ -151,6 +151,25 @@ IF you want to use the pug templating engine:
             3. In your index.pug file (for example), you would then write at the top of the document "extends layout"
                 o   What happens here is that the module is loaded to that page!
             4. Then, add "block content" for the design on your page.
+
+
+PHASE 7: Add contact form
+==========================
+
+
+
+
+
+
+SPECIAL NOTES
+==============
+o   I had an incident where the node_modules folder was corrupted (and subsequently the website would not respond).
+    To resolve this, I tried removing the node_modules folder from gitbash but was unsuccessful.  I tried a manual 
+    removal that worked and then reinstalled "npm install" which worked perfectly.  
+
+
+
+
 
     Additional resources:
     https://jilles.me/getting-the-express-app-js/ -- good overview of express apps.

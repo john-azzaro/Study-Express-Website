@@ -44,18 +44,18 @@
             <span class="accent-text">Contact</span>  
             Page                                      
         </h1>
-        <form class="contact-form">
+        <form class="contact-form" method="post" action="contact/send">
             <div class="input-group">
                 <label>Name:</label>
-                <input type="text" >
+                <input class="form-control" type="text" name="name">
             </div>
             <div class="input-group">
                 <label>Email:</label>
-                <input type="email" >
+                <input class="form-control" type="email" name="email">
             </div>
             <div class="input-group">
-                <label>Password:</label>
-                <input type="text" >
+                <label>Message:</label>
+                <textarea class="form-control" type="text" name="message" rows="10"></textarea>
             </div>
             <div class="input-group">
                 <button type="submit" class="btn">Send Away!</button>

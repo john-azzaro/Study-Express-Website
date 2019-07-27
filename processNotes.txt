@@ -155,10 +155,39 @@ IF you want to use the pug templating engine:
 
 PHASE 7: Add contact form
 ==========================
+    STEP 1: Add your contact form.  Be sure to add the following items to your forms: 
 
+        <form class="contact-form" method="POST" action="/submit-form">                   <== method=POST means we are posting sending info, action="/submit-form" will be for your route.
+                <div class="input-group">
+                    <label>Name:</label>
+                    <input class="form-control" type="text" name="name">
+                </div>
+                <div class="input-group">
+                    <label>Email:</label>
+                    <input class="form-control" type="email" name="email">
+                </div>
+                <div class="input-group">
+                    <label>Message:</label>
+                    <textarea class="form-control" type="text" name="message" rows="10"></textarea>
+                </div>
+                <div class="input-group">
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </div>
+            </form>
 
+    STEP 2: In your app.js, make sure you have the following middleware:
 
+            app.use(bodyParser.json());                                                   <== bodyparser middleware that can parse json*/
+            app.use(bodyParser.urlencoded({extended: false}));                            <== bodyparser middleware that can parse url for form*/
 
+    STEP 3: Create a route for your form submission:
+        o   If you want to test, include
+
+            app.post('/submit-form', function(req, res) {                                 
+                console.log('contact form submitted...');                                                      
+            });  
+
+    STEP 4: 
 
 
 SPECIAL NOTES

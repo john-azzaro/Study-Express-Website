@@ -12,9 +12,10 @@ const app = express();                                                      /* i
 // app.set('view engine', 'pug')                                           /* IF you would like to use the pug templating engine, set this and in app.get, use 'index'*/
 
 app.use(express.static(path.join(__dirname + '/public')));              /* IF you would like to use static HTML files, you only need to set this and in app.get, use index.html*/
+                                                                        
                                                                         /* Third, set up your middleware with app.use.  app.use applies the specified middleware to the main app stack in the order they are listed A->B->C */
-app.use(bodyParser.json())                                                  /* bodyparser middleware that can parse json*/
-app.use(bodyParser.urlencoded({extended: false}));                          /* bodyparser middleware that can parse url */
+app.use(bodyParser.json());                                                  /* bodyparser middleware that can parse json*/
+app.use(bodyParser.urlencoded({extended: false}));                            /* bodyparser middleware that can parse url for form*/
 
 
 
@@ -22,6 +23,15 @@ app.use(bodyParser.urlencoded({extended: false}));                          /* b
 //     res.render('index');                                                   /* NOTE: Use specific routes like this if you are using pug via views folder. However, */
 // });                                                                        /* because we are using express.static middleware to server assets from /public, we dont need*/
                                                                               /* to use individual routes like this because the app knows to look INSIDE /public folder./ */
+
+                                                                            /* For the email form:*/
+app.post('/submit-form', function(req, res) {                                /* use app.post because we are sending information*/
+    console.log('testing contact form');                                                      
+});                                                                       
+           
+
+
+
 
 app.listen(process.env.PORT || 3000, function() {
     console.log(`Your app is listening on port ${process.env.PORT || 3000}...`);     /* app.listen commands the server to listen for client requests on port 3000 and log when it begins listening*/

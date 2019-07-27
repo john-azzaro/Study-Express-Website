@@ -44,7 +44,11 @@ app.post('/submit-form', function(req, res) {                                /* 
     
     transporter.sendMail(mailOptions, function(error, info) {
         if(error) {
-            console.log()
+            console.log(error);
+            res.redirect('/');
+        } else {
+            console.log('Message sent: '+info.response);
+            res.redirect('/')
         }
     });
 });                                                                       

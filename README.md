@@ -5,6 +5,13 @@
 ## What is Express Website Study?
 Express Website Study is a study in the construction of a website with the express framework, whih cuts down the development time and complexity of you application.  In this study, we have a basic website with 2 informational pages and a contact page with working contact form.  The project also utilizes a number of middlewares including built-in middleware, third-party midddleware, etc.  I also wanted to cover two ways to build your express website by either using static files (i.e. html, etc.) and templating engines like pug.
 
+Here are a few questions examined in this study:
+
+* [How do you install Express Website Study?](#How-do-you-install-Express-Website-Study)
+* [Does Express Website Study feature commentary?](#Does-Express-Website-Study-feature-commentary)
+* [What are the key features of Express Website Study?](#What-are-the-key-features-of-Express-Website-Study)
+* [Screenshots](#Screenshots)
+
 <br>
 
 ## How do you install Express Website Study?
@@ -19,7 +26,7 @@ Yes! I use extensive Commentary (mostly in the form of my thought process) so th
 
 <br>
 
-## What are the key features of Express Website Studyy?
+## What are the key features of Express Website Study?
 Since this study is ongoing, basic functionalities are covered first and more advanced features are added or will be added in the future:
 
 

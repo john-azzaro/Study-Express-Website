@@ -7,6 +7,13 @@ Express Website Study is a study in the construction of a website with the expre
 
 <br>
 
+## How do you install Express Website Study?
+1. After cloning this repo, run ```npm install``` at the command line.
+2. To stat the app, run ```node index.js``` at the command line.
+3. Visit http://localhost:3000 to see the study live.
+
+<br>
+
 ## Does Express Website Study feature commentary?
 Yes! I use extensive Commentary (mostly in the form of my thought process) so that the new and curious can follow the logic in the program and get an idea of my reasoning behind each and every line of code.  In addition to my line-by-line commantary, I also provide a Process text file that gives a good outline of my design and implementation process. 
 

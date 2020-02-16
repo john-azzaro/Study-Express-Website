@@ -20,7 +20,7 @@ Yes! I use extensive Commentary (mostly in the form of my thought process) so th
 <br>
 
 ## What are the key features of Express Website Studyy?
-Since this study is ongoing, basic functionalities are covered first and more advanced features are added or will be added in the future.  I divided this particular study into different branches covering different aspects of basic node servers, which i list below:
+Since this study is ongoing, basic functionalities are covered first and more advanced features are added or will be added in the future:
 
 
 | **Features:**                            | **Feature Notes:**                             |

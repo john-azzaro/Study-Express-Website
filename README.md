@@ -9,7 +9,7 @@ Express Website Study is a study in the construction of a website with the expre
 
 ## How do you install Express Website Study?
 1. After cloning this repo, run ```npm install``` at the command line.
-2. To stat the app, run ```node index.js``` at the command line.
+2. To stat the app, run ```node app.js``` at the command line.
 3. Visit http://localhost:3000 to see the study live.
 
 <br>
